@@ -620,3 +620,13 @@ pre tt:after {
     font-size: 100%;
   }
 }
+
+a {
+  text-decoration: none; 
+}
+a:visited {
+  color: maroon; 
+}
+a:hover{
+  color: pink; 
+}
