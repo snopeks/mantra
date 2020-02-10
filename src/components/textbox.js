@@ -9,17 +9,13 @@ const TextBox = () => {
         <div>
             <p>Write your values out: </p>
             <textarea 
-                placeholder="Start writing!"
+                placeholder="Our family is..."
                 style={{
                     fontFamily: `${font}`,
                 }}
             >
             </textarea>
-            <button
-                style={{
-                    margin: `0 auto`,
-                }}
-            >Save as PDF!</button>
+            <button>Save as PDF!</button>
         </div>   
         <div>
             <p>Select your font: </p>

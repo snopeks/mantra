@@ -19,6 +19,7 @@ textarea {
     width: 100%;
     text-align: center; 
     padding: 100px;  
+    line-height: 50px; 
 }
 .container {
     display: grid;
