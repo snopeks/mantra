@@ -1,29 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './textbox.css';
 
 
-const changeFont = (font) => (
-    console.log(`clicking ${font}`)        
-)
-
-
-const TextBox = () => (
+const TextBox = () => {
+    const [font, setFont] = useState("pacifico");
+    return (
     <div className="container">
         <div>
             <p>Write your values out: </p>
             <textarea 
-                style={{
-                    border: `5px dashed black`,
-                    textAlign: `center`, 
-                    fontSize: `2rem`,
-                    fontFamily: `pacifico`,
-                    height: `1000px`,
-                    width: `100%`,
-                    padding:`150px 50px`,
-
-                }}
                 placeholder="Start writing!"
-            
+                style={{
+                    fontFamily: `${font}`,
+                }}
             >
             </textarea>
             <button
@@ -38,7 +27,7 @@ const TextBox = () => (
                 style={{
                     fontFamily: `Pacifico`,
                 }}
-                onClick={() => changeFont("pacifico")}
+                onClick={() => setFont("pacifico")}
             >
                 Aa
             </button>
@@ -46,7 +35,7 @@ const TextBox = () => (
                 style={{
                     fontFamily: `Lemonada`,
                 }}
-                onClick={() => changeFont("Lemonada")}
+                onClick={() => setFont("Lemonada")}
             >
                 Aa
             </button>
@@ -54,7 +43,7 @@ const TextBox = () => (
                 style={{
                     fontFamily: `Montserrat`,
                 }}
-                onClick={() => changeFont("Montserrat")}
+                onClick={() => setFont("Montserrat")}
             >
                 Aa
             </button>
@@ -62,7 +51,7 @@ const TextBox = () => (
                 style={{
                     fontFamily: `Lobster`,
                 }}
-                onClick={() => changeFont("Lobster")}
+                onClick={() => setFont("Lobster")}
             >
                 Aa
             </button>
@@ -70,7 +59,7 @@ const TextBox = () => (
                 style={{
                     fontFamily: `Abril Fatface`,
                 }}
-                onClick={() => changeFont("Abril Fatface")}
+                onClick={() => setFont("Abril Fatface")}
             >
                 Aa
             </button>
@@ -78,7 +67,7 @@ const TextBox = () => (
                 style={{
                     fontFamily: `Exo 2`,
                 }}
-                onClick={() => changeFont("Exo 2")}
+                onClick={() => setFont("Exo 2")}
             >
                 Aa
             </button>
@@ -86,7 +75,7 @@ const TextBox = () => (
                 style={{
                     fontFamily: `Raleway`,
                 }}
-                onClick={() => changeFont("Raleway")}
+                onClick={() => setFont("Raleway")}
             >
                 Aa
             </button>
@@ -94,7 +83,7 @@ const TextBox = () => (
                 style={{
                     fontFamily: `Rajdhani`,
                 }}
-                onClick={() => changeFont("Rajdhani")}
+                onClick={() => setFont("Rajdhani")}
             >
                 Aa
             </button>
@@ -102,7 +91,7 @@ const TextBox = () => (
                 style={{
                     fontFamily: `Permanent Marker`,
                 }}
-                onClick={() => changeFont("Permanent Marker")}
+                onClick={() => setFont("Permanent Marker")}
             >
                 Aa
             </button>
@@ -110,7 +99,7 @@ const TextBox = () => (
                 style={{
                     fontFamily: `Alfa Slab One`,
                 }}
-                onClick={() => changeFont("Alfa Slab One")}
+                onClick={() => setFont("Alfa Slab One")}
             >
                 Aa
             </button>
@@ -118,7 +107,7 @@ const TextBox = () => (
                 style={{
                     fontFamily: `Archivo Black`,
                 }}
-                onClick={() => changeFont("Archivo Black")}
+                onClick={() => setFont("Archivo Black")}
             >
                 Aa
             </button>
@@ -126,12 +115,15 @@ const TextBox = () => (
                 style={{
                     fontFamily: `Playfair Display SC`,
                 }}
-                onClick={() => changeFont("Playfair Display SC")}
+                onClick={() => setFont("Playfair Display SC")}
             >
                 Aa
             </button>
         </div>
     </div>
-)
+
+
+    )
+}
 
 export default TextBox; 

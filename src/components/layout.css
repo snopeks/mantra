@@ -621,10 +621,8 @@ pre tt:after {
   }
 }
 
-a {
+a, a:visited {
   text-decoration: none; 
-}
-a:visited {
   color: maroon; 
 }
 a:hover{
