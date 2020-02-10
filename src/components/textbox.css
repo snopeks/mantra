@@ -1,26 +1,41 @@
 @import url('https://fonts.googleapis.com/css?family=Abril+Fatface|Alfa+Slab+One|Archivo+Black|Exo+2|Lemonada|Lobster|Montserrat|Pacifico|Permanent+Marker|Playfair+Display+SC|Rajdhani|Raleway&display=swap');
 
 p {
-    font-family: "Helvetica"; 
-    font-size: 1.5rem; 
+    font-family: "Raleway"; 
+    font-size: 1rem; 
 }
 button {
     background-color: pink; 
     box-shadow: 3px 3px 3px;
+    width: 80px; 
+    margin: 5px; 
 }
 button:hover {
     color: white; 
 }
-
+textarea {
+    border: 2px dashed black; 
+    height: 455px; 
+    width: 100%;
+    text-align: center; 
+    padding: 100px;  
+}
 .container {
     display: grid;
-    grid-template-columns: 25% 25% 25% 25%;  
+    grid-template-columns: 60% 40%;  
     grid-column-gap: 10px; 
     grid-row-gap: 8px; 
 }
 @media(min-width: 800px ){
     .container {
-        grid-template-columns: 75% 25%; 
-        justify-content: space-between; 
+        grid-template-columns: 60% 40%; 
+    }
+    p {
+        font-size: 1.5rem; 
+    }
+
+    textarea {
+        height: 800px; 
+        font-size: 1.5rem; 
     }
 }
