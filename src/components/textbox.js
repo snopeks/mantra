@@ -6,27 +6,46 @@ import './textbox.css';
 
 const TextBox = () => {
     const [font, setFont] = useState("pacifico");
-
+    const [text, setText] = useState("");
+    
+    const updateText = () => {
+        let text = document.getElementById("userInput").value
+        setText(text);
+    }
     function print() {
-		const filename  = 'ThisIsYourPDFFilename.pdf';
-
-		html2canvas(document.querySelector('#nodeToRenderAsPDF')).then(canvas => {
-			let pdf = new jsPDF('p', 'mm', 'a4');
-			pdf.addImage(canvas.toDataURL('image/png'), 'PNG', 0, -270, 211, 298);
+        const filename  = 'yourmantra.pdf';
+		html2canvas(document.querySelector("#nodeToRenderAsPDF"), { width: "600", height: "2000" }).then(canvas => {
+            console.log("in the canvas rendering function")
+            // document.body.appendChild(canvas);
+			let pdf = new jsPDF('p', 'in', 'a4');
+            pdf.addImage(canvas.toDataURL('image/png'), 'PNG', 1, -5, 8, 17);
 			pdf.save(filename);
 		});
 	}
     return (
     <div className="container">
-        <div id="nodeToRenderAsPDF">
+        <div>
             <p>Write your love note: </p>
             <textarea 
+                id="userInput"
                 placeholder="Our family is..."
                 style={{
                     fontFamily: `${font}`,
                 }}
+                onChange={() => updateText()}
             >
             </textarea>
+            <p>Preview: </p>
+            <div id="nodeToRenderAsPDF">   
+                <p
+                    style={{
+                        fontFamily: `${font}`,
+                        textAlign: `center`,
+                    }}
+                >
+                    {text}
+                </p>
+            </div>
             <button onClick={() => print()}>Save as PDF!</button>
         </div>   
         <div>
