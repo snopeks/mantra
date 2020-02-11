@@ -17,8 +17,7 @@ textarea {
     border: 2px dashed black; 
     height: 455px; 
     width: 100%;
-    text-align: center; 
-    padding: 100px;  
+    text-align: center;  
     line-height: 50px; 
 }
 .container {
