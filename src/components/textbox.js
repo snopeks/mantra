@@ -1,25 +1,52 @@
 import React, { useState } from 'react';
+import html2canvas from 'html2canvas';
+import jsPDF from 'jspdf';
 import './textbox.css';
 
 
 const TextBox = () => {
     const [font, setFont] = useState("pacifico");
+    const [text, setText] = useState("");
+    
+    const updateText = () => {
+        let text = document.getElementById("userInput").value
+        setText(text);
+    }
+    function print() {
+        const filename  = 'yourmantra.pdf';
+		html2canvas(document.querySelector("#nodeToRenderAsPDF"), { width: "600", height: "2000" }).then(canvas => {
+            console.log("in the canvas rendering function")
+            // document.body.appendChild(canvas);
+			let pdf = new jsPDF('p', 'in', 'a4');
+            pdf.addImage(canvas.toDataURL('image/png'), 'PNG', 1, -5, 8, 17);
+			pdf.save(filename);
+		});
+	}
     return (
     <div className="container">
         <div>
-            <p>Write your values out: </p>
+            <p>Write your love note: </p>
             <textarea 
-                placeholder="Start writing!"
+                id="userInput"
+                placeholder="Our family is..."
                 style={{
                     fontFamily: `${font}`,
                 }}
+                onChange={() => updateText()}
             >
             </textarea>
-            <button
-                style={{
-                    margin: `0 auto`,
-                }}
-            >Save as PDF!</button>
+            <p>Preview: </p>
+            <div id="nodeToRenderAsPDF">   
+                <p
+                    style={{
+                        fontFamily: `${font}`,
+                        textAlign: `center`,
+                    }}
+                >
+                    {text}
+                </p>
+            </div>
+            <button onClick={() => print()}>Save as PDF!</button>
         </div>   
         <div>
             <p>Select your font: </p>
