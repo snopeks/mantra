@@ -12,13 +12,13 @@ const TextBox = () => {
         let text = document.getElementById("userInput").value
         setText(text);
     }
-    function print() {
+    function print(quality = 2) {
         const filename  = 'yourmantra.pdf';
-		html2canvas(document.querySelector("#nodeToRenderAsPDF"), { width: "600", height: "2000" }).then(canvas => {
-            console.log("in the canvas rendering function")
+		html2canvas(document.querySelector("#nodeToRenderAsPDF"), { scale: quality, width: "700", height: "1450" }).then(canvas => {
             // document.body.appendChild(canvas);
+            console.log(window.innerWidth)
 			let pdf = new jsPDF('p', 'in', 'a4');
-            pdf.addImage(canvas.toDataURL('image/png'), 'PNG', 1, -5, 8, 17);
+            pdf.addImage(canvas.toDataURL('image/png'), 'PNG', 1, -3, 8, 17);
 			pdf.save(filename);
 		});
 	}
@@ -28,23 +28,18 @@ const TextBox = () => {
             <p>Write your love note: </p>
             <textarea 
                 id="userInput"
-                placeholder="Our family is..."
-                style={{
-                    fontFamily: `${font}`,
-                }}
+                placeholder="I love you because..."
                 onChange={() => updateText()}
             >
             </textarea>
             <p>Preview: </p>
-            <div id="nodeToRenderAsPDF">   
-                <p
-                    style={{
-                        fontFamily: `${font}`,
-                        textAlign: `center`,
-                    }}
-                >
-                    {text}
-                </p>
+            <div id="nodeToRenderAsPDF"
+                style={{
+                    fontFamily: `${font}`,
+                    textAlign: `center`,
+                }}
+            >   
+                {text}  
             </div>
             <button onClick={() => print()}>Save as PDF!</button>
         </div>   
@@ -60,9 +55,9 @@ const TextBox = () => {
             </button>
             <button
                 style={{
-                    fontFamily: `Lemonada`,
+                    fontFamily: `Yesteryear`,
                 }}
-                onClick={() => setFont("Lemonada")}
+                onClick={() => setFont("Yesteryear")}
             >
                 Aa
             </button>
@@ -76,9 +71,9 @@ const TextBox = () => {
             </button>
             <button
                 style={{
-                    fontFamily: `Lobster`,
+                    fontFamily: `Megrim`,
                 }}
-                onClick={() => setFont("Lobster")}
+                onClick={() => setFont("Megrim")}
             >
                 Aa
             </button>
@@ -92,25 +87,25 @@ const TextBox = () => {
             </button>
             <button
                 style={{
-                    fontFamily: `Exo 2`,
+                    fontFamily: `Damion`,
                 }}
-                onClick={() => setFont("Exo 2")}
+                onClick={() => setFont("Damion")}
             >
                 Aa
             </button>
             <button
                 style={{
-                    fontFamily: `Raleway`,
+                    fontFamily: `Limelight`,
                 }}
-                onClick={() => setFont("Raleway")}
+                onClick={() => setFont("Limelight")}
             >
                 Aa
             </button>
             <button
                 style={{
-                    fontFamily: `Rajdhani`,
+                    fontFamily: `Vast Shadow`,
                 }}
-                onClick={() => setFont("Rajdhani")}
+                onClick={() => setFont("Vast Shadow")}
             >
                 Aa
             </button>
@@ -124,9 +119,9 @@ const TextBox = () => {
             </button>
             <button
                 style={{
-                    fontFamily: `Alfa Slab One`,
+                    fontFamily: `Monoton`,
                 }}
-                onClick={() => setFont("Alfa Slab One")}
+                onClick={() => setFont("Monoton")}
             >
                 Aa
             </button>

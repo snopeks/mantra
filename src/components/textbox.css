@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Abril+Fatface|Alfa+Slab+One|Archivo+Black|Exo+2|Lemonada|Lobster|Montserrat|Pacifico|Permanent+Marker|Playfair+Display+SC|Rajdhani|Raleway&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Abril+Fatface|Archivo+Black|Damion|Megrim|Monoton|Montserrat|Pacifico|Permanent+Marker|Playfair+Display+SC|Vast+Shadow|Limelight|Yesteryear&display=swap');
 
 p {
     font-family: "Raleway"; 
@@ -18,16 +18,14 @@ textarea {
     border: 2px dashed black; 
     height: 100px; 
     width: 100%;
-    font-size: 10px; 
-    text-align: center;  
+    font-size: 8px; 
     line-height: 20px; 
-    margin-bottom: 30px; 
 }
 #nodeToRenderAsPDF {
-    font-size: 20px; 
+    font-size: 1em; 
     line-height: 20px; 
+    letter-spacing: 0.03em;
     padding: 10px; 
-    height: 300px; 
 }
 .container {
     display: grid;
@@ -43,15 +41,13 @@ textarea {
         font-size: 1.5rem; 
     }
     #nodeToRenderAsPDF {
-        height: 500px; 
-        font-size: 50px; 
+        font-size: 2em; 
         line-height: 50px; 
-        padding: 30px; 
-
     }
 
     textarea {
         height: 100px; 
         font-size: 1rem; 
+        margin-bottom: 30px; 
     }
 }
