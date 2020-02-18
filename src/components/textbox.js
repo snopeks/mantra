@@ -14,12 +14,14 @@ const TextBox = () => {
     }
     function print(quality = 2) {
         const filename  = 'yourmantra.pdf';
-		html2canvas(document.querySelector("#nodeToRenderAsPDF"), { scale: quality, width: "700", height: "1450" }).then(canvas => {
-            // document.body.appendChild(canvas);
-			let pdf = new jsPDF('p', 'in', 'a4');
-            pdf.addImage(canvas.toDataURL('image/png'), 'PNG', 1, -3, 8, 17);
-			pdf.save(filename);
-		});
+        if(window !== undefined){
+            html2canvas(document.querySelector("#nodeToRenderAsPDF"), { scale: quality, width: "700", height: "1450" }).then(canvas => {
+                // document.body.appendChild(canvas);
+                let pdf = new jsPDF('p', 'in', 'a4');
+                pdf.addImage(canvas.toDataURL('image/png'), 'PNG', 1, -3, 8, 17);
+                pdf.save(filename);
+            });
+        }
 	}
     return (
     <div className="container">
