@@ -1,18 +1,27 @@
-@import url('https://fonts.googleapis.com/css?family=Abril+Fatface|Archivo+Black|Damion|Megrim|Monoton|Montserrat|Pacifico|Permanent+Marker|Playfair+Display+SC|Vast+Shadow|Limelight|Yesteryear&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Abril+Fatface|Qwigley|Damion|Megrim|Monoton|Montserrat|Pacifico|Permanent+Marker|Playfair+Display+SC|Vast+Shadow|Limelight|Yesteryear&display=swap');
 
 p {
     font-family: "Raleway"; 
     font-size: 1rem; 
     line-height: 30px; 
 }
+#buttonContainer {
+    display: grid; 
+    grid-template-columns: 50% 50%; 
+    grid-row-gap: 10px; 
+}
 button {
     background-color: pink; 
     box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.4);
-    width: 80px; 
-    margin: 5px; 
+    width: 50px; 
 }
-button:hover {
+#saveButton, button:hover {
     color: white; 
+}
+#saveButton {
+    width: 80px; 
+    display: block; 
+    margin: 0 auto; 
 }
 textarea {
     border: 2px dashed black; 
@@ -23,7 +32,7 @@ textarea {
 }
 #nodeToRenderAsPDF {
     font-size: 1em; 
-    line-height: 20px; 
+    line-height: 1.5em; 
     letter-spacing: 0.03em;
     padding: 10px; 
 }
@@ -40,11 +49,16 @@ textarea {
     p {
         font-size: 1.5rem; 
     }
+    button {
+        width: 80px; 
+    }
     #nodeToRenderAsPDF {
         font-size: 2em; 
         line-height: 50px; 
     }
-
+    #buttonContainer {
+        grid-template-columns: 25% 25% 25% 25%; 
+    }
     textarea {
         height: 100px; 
         font-size: 1rem; 

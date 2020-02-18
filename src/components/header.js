@@ -28,7 +28,7 @@ const Header = ({ siteTitle }) => (
           {siteTitle}
         </Link>
       </h1>
-      <h3>Design with love in mind</h3>
+      <h3>Design with heart</h3>
     </div>
   </header>
 )
