@@ -4,7 +4,7 @@ import './textbox.css';
 
 function savePDF(quality = 2) {
     const filename  = 'lovebirdquote.pdf';
-    if(typeof window !== undefined && window.innerHeight >= 600){
+    if(typeof window !== "undefined" && window.innerHeight >= 600){
         const html2canvas = require('html2canvas');
         html2canvas(document.querySelector("#nodeToRenderAsPDF"), { scale: quality, width: "700", height: "1450" }).then(canvas => {
             // document.body.appendChild(canvas);
