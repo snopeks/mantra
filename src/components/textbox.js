@@ -14,7 +14,7 @@ const TextBox = () => {
     }
     function print(quality = 2) {
         const filename  = 'yourmantra.pdf';
-        if(window !== undefined){
+        if(window !== undefined && window.innerHeight >= 600){
             html2canvas(document.querySelector("#nodeToRenderAsPDF"), { scale: quality, width: "700", height: "1450" }).then(canvas => {
                 // document.body.appendChild(canvas);
                 let pdf = new jsPDF('p', 'in', 'a4');
