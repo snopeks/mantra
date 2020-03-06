@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import jsPDF from 'jspdf';
-import html2canvas from 'html2canvas';
+// import html2canvas from 'html2canvas';
 import './textbox.css';
 
 const TextBox = () => {
@@ -12,8 +12,8 @@ const TextBox = () => {
     useEffect(() => {
         savePDF = (quality = 2) => {
             const filename  = 'lovebirdquote.pdf';
-            if(typeof window !== "undefined" && window.innerHeight >= 600){
-                // var html2canvas = require('html2canvas');
+            if(typeof window !== `undefined`){
+                const html2canvas = require('html2canvas');
                 html2canvas(document.querySelector("#nodeToRenderAsPDF"), { scale: quality, width: "700", height: "1450" }).then(canvas => {
                     // document.body.appendChild(canvas);
                     let pdf = new jsPDF('p', 'in', 'a4');
