@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import jsPDF from 'jspdf';
+import html2canvas from 'html2canvas';
 import './textbox.css';
 
 const TextBox = () => {
@@ -12,7 +13,7 @@ const TextBox = () => {
         savePDF = (quality = 2) => {
             const filename  = 'lovebirdquote.pdf';
             if(typeof window !== "undefined" && window.innerHeight >= 600){
-                const html2canvas = require('html2canvas');
+                // var html2canvas = require('html2canvas');
                 html2canvas(document.querySelector("#nodeToRenderAsPDF"), { scale: quality, width: "700", height: "1450" }).then(canvas => {
                     // document.body.appendChild(canvas);
                     let pdf = new jsPDF('p', 'in', 'a4');
@@ -21,7 +22,7 @@ const TextBox = () => {
                 });
             }
         }
-    })
+    }, [])
     
     const updateText = () => {
         let text = document.getElementById("userInput").value
@@ -47,7 +48,7 @@ const TextBox = () => {
             >   
                 {text}  
             </div>
-            <button id="saveButton"onClick={() => savePDF()}>Save as PDF</button>
+            <button id="saveButton" onClick={() => savePDF()}>Save as PDF</button>
         </div>   
         <div>
             <p>Select your font: </p>
