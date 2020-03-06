@@ -6,21 +6,22 @@ const TextBox = () => {
     const [font, setFont] = useState("pacifico");
     const [text, setText] = useState("");
 
-    function savePDF(quality = 2) {
-        const filename  = 'lovebirdquote.pdf';
-        if(typeof window !== "undefined" && window.innerHeight >= 600){
-            const html2canvas = require('html2canvas');
-            html2canvas(document.querySelector("#nodeToRenderAsPDF"), { scale: quality, width: "700", height: "1450" }).then(canvas => {
-                // document.body.appendChild(canvas);
-                let pdf = new jsPDF('p', 'in', 'a4');
-                pdf.addImage(canvas.toDataURL('image/png'), 'PNG', 1, -3, 8, 17);
-                pdf.save(filename);
-            });
+    let savePDF; 
+    
+    useEffect(() => {
+        savePDF = (quality = 2) => {
+            const filename  = 'lovebirdquote.pdf';
+            if(typeof window !== "undefined" && window.innerHeight >= 600){
+                const html2canvas = require('html2canvas');
+                html2canvas(document.querySelector("#nodeToRenderAsPDF"), { scale: quality, width: "700", height: "1450" }).then(canvas => {
+                    // document.body.appendChild(canvas);
+                    let pdf = new jsPDF('p', 'in', 'a4');
+                    pdf.addImage(canvas.toDataURL('image/png'), 'PNG', 1, -3, 8, 17);
+                    pdf.save(filename);
+                });
+            }
         }
-    }
-    // useEffect(() => {
-        
-    // })
+    })
     
     const updateText = () => {
         let text = document.getElementById("userInput").value
